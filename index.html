@@ -1,5 +1,266 @@
-<!doctype html>
-<meta charset="utf-8">
-<title>自己紹介</title>
-<h1>自己紹介</h1>
-<p>こんにちは。楽しいです。ははは</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            /* For JS fade-in effect */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Skills specific */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-color);
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Works specific */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .work-item {
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 1.5rem;
+            background-color: #fafafa;
+        }
+
+        .work-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            section {
+                padding: 1.5rem;
+            }
+            nav {
+                gap: 1rem;
+            }
+            header {
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Portfolio</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#works">Works</a>
+            <a href="#reflection">Reflection</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>こんにちは。Web技術やデザインに興味を持ち、日々学習を続けています。</p>
+            <p>シンプルで使いやすいインターフェースの構築を心がけており、新しい知識を吸収し、形にしていくプロセスを大切にしています。</p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>現在までに触れてきた技術や、学習中の分野です。</p>
+            <div class="skills-container">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">Problem Solving</span>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2>Works</h2>
+            <div class="work-grid">
+                <div class="work-item">
+                    <h3>Project Title A</h3>
+                    <p>個人のタスクを管理するためのシンプルなWebアプリケーション。直感的な操作性を意識して作成しました。</p>
+                </div>
+                <div class="work-item">
+                    <h3>Project Title B</h3>
+                    <p>レスポンシブデザインを取り入れた静的なランディングページ。情報の見やすさを重視しています。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection">
+            <h2>Reflection</h2>
+            <p>これまでの活動を通して、技術的な知識だけでなく、ユーザー目線に立つことの重要性を学びました。</p>
+            <p>失敗から得た教訓を次のステップに活かし、今後も継続的にスキルアップを図りながら、価値あるものを提供できるよう努めていきます。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // フッターの年を自動更新
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // スムーススクロール
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // ヘッダーの高さを考慮したスクロール位置の調整
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // スクロール時のフェードインアニメーション (Intersection Observer)
+            const sections = document.querySelectorAll('section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // 一度表示されたら監視を解除
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
